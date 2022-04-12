@@ -8,7 +8,7 @@
 performing any changes to any of the columns this time when we are creating a dictionary. We also did not handle Unknown values this time*
   * *We are trying to add goldilock features to planets that are in the Goldilock zone, but it's in X AU format and we are not handling that. We have to split the string from a <space>, take the first element and convert it to float.**(Code is given below)**.*
   * *We also have to fix the speed calculation. Again, we will fix the distance by converting it to float after we split it and we also have to convert orbital_period to days.**(Code is given below)**.*
-  * * Now, our planets in the Goldilock zone were 25 and the planets that had suitable speed was 8. These planets also exhibited the properties of suitable gravity and
+  * *Now, our planets in the Goldilock zone were 25 and the planets that had suitable speed was 8. These planets also exhibited the properties of suitable gravity and
 planet type. Find out all such planets that exhibit all the properties.*
   * *Here, the result is 0 for both of them. This does not match with the analysis result that we got earlier.To debug this, remove the try-except statements from the code where we are adding goldilock and speed properties and see what errors we are getting. It now says that float object has no attribute lower. This means that there might be some values that are float. Fix this by handling these situations.*
   * *Re-run the blocks that gave us the output 0 and 0 for planets supporting all the properties and this time, we shall get 25 for goldilock planets and 6 for planets with both goldilock and speed.*
@@ -49,7 +49,7 @@ print(type_planet_count - type_no_gravity_planet_count)
 float(planet_data[8].split(" ")[0]) < 2:
  features_list.append("goldilock")
 ````
-* **Code to final speed supporting planets*
+* **Code to final speed supporting planets**
 ````
 distance = 2 * 3.14 * (float(planet_data[8].split(" ")[0]) * 1.496e+9)
  time, unit = planet_data[9].split(" ")[0], planet_data[9].split("")[1]
@@ -62,7 +62,7 @@ distance = 2 * 3.14 * (float(planet_data[8].split(" ")[0]) * 1.496e+9)
 ````
 
 ## Facts :
-* *Now that we have the final list of habitable planets, are they really habitable? Some facts:
+* *Now that we have the final list of habitable planets, are they really habitable? Some facts:*
    * *In our solar system, we know that the first 4 planets (Mercury, Venus, Earth and Mars) are Terrestrial Planets.*
    * *Rest of the planets are either Gas Giants or Neptune Like.*
 * *The first thing we filtered out is Gravity :*
